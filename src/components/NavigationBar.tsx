@@ -16,7 +16,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({token, spotify, aut
     return (
         <Router forceRefresh>
             <Navbar sticky={"top"} style={{paddingTop: "25px", paddingBottom: "25px"}} bg="transparent">
-                <Navbar.Brand><Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/undergroundmarket/"><img src={logo} className="App-logo" alt="logo" /></Link></Navbar.Brand>
                         <Nav className="mr-auto" />
                         {
                         (token === "") ? 
@@ -26,9 +26,9 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({token, spotify, aut
                                 {/* <Nav.Link href="/track/1"><i className="fas fa-search gray"></i></Nav.Link> */}
                                 {
                                     window.location.pathname.includes("me") ? 
-                                    <Nav.Link href="/"><i className="fas fa-home gray"></i></Nav.Link> 
+                                    <Nav.Link href="/undergroundmarket/"><i className="fas fa-home gray"></i></Nav.Link> 
                                     :
-                                    <Nav.Link href="/me"><i className="fas fa-eye gray"></i></Nav.Link> 
+                                    <Nav.Link href="/undergroundmarket/me"><i className="fas fa-eye gray"></i></Nav.Link> 
                                 }
                             </React.Fragment>
                         }
