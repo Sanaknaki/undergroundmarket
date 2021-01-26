@@ -1,26 +1,89 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Main } from "./components/Main";
+import { TrackInfo } from "./components/TrackInfo";
+import { Me } from "./components/Me";
+
+import { NavigationBar } from "./components/NavigationBar";
+
+import { getCurrentUser, getCurrentUsersPlaylists, getPopularDailyPlaylist, createUndergroundMarketPlaylist, checkTokenValidity } from "./utils/APIController";
+import { Credentials, authEndpoint } from "./utils/Credentials";
+import hash from "./utils/Hash";
+
+import './css/App.css';
+
+const App: React.FC<{}> = () => {
+
+    const spotify = Credentials();
+
+    const [token, setToken] = useState("");
+    const [user, setUser] = useState({fn: "", id: ""});
+    
+    const [undergroundPlaylist, setUnderGroundPlaylist] = useState([]);
+    const [undergroundPlaylistID, setUndergroundPlaylistID] = useState("");
+
+    const [popularDailyPlaylist, setPopularDailyPlaylist] = useState([]);
+
+    useEffect(() => {
+        let _token = (localStorage.getItem("TOKEN")) ? (localStorage.getItem("TOKEN")) : hash.access_token;
+        if(_token) {
+            localStorage.setItem("TOKEN", _token)
+            setToken(_token);
+            getCurrentUser(_token, setUser);
+            getCurrentUsersPlaylists(_token, setUnderGroundPlaylist, setUndergroundPlaylistID);
+            getPopularDailyPlaylist(_token, setPopularDailyPlaylist);
+        }
+
+        window.location.hash = "";
+    }, []);
+    
+    // if(localStorage.getItem("TOKEN")) {
+    //     checkTokenValidity();
+    // }
+
+    return (
+    <Router>
+        <NavigationBar token={token} spotify={spotify} authEndpoint={authEndpoint}/>
+
+        {
+            token || localStorage.getItem("TOKEN") ? 
+                (
+                    <Switch>
+                        <Route exact path="/">
+                            <Main 
+                                token={token}
+                                name={user.fn} 
+                                undergroundPlaylist={undergroundPlaylist}  
+                                undergroundPlaylistID={undergroundPlaylistID}
+                                popularDailyPlaylist={popularDailyPlaylist}
+
+                                createUndergroundMarketPlaylist={() => createUndergroundMarketPlaylist(token, user.id, setUnderGroundPlaylist, setUndergroundPlaylistID)}
+                            />
+                        </Route>
+
+                        <Route path={"/track/:trackId"}>
+                            <TrackInfo
+                                playlist={undergroundPlaylist}
+                                playlistID={undergroundPlaylistID}
+                            />
+                        </Route>
+
+                        <Route path="/me">
+                            <Me 
+                                playlist={undergroundPlaylist}
+                                playlistID={undergroundPlaylistID}
+                            />
+                        </Route>
+
+                    </Switch>
+                )
+            :
+                <h1>YOU ARE NOT LOGGED IN!</h1>
+        }
+
+    </Router>
+    );
 }
 
 export default App;
