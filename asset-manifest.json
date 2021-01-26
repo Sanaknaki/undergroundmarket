@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/undergroundmarket/static/css/main.cf77d654.chunk.css",
+    "main.js": "/undergroundmarket/static/js/main.f5095fcf.chunk.js",
+    "main.js.map": "/undergroundmarket/static/js/main.f5095fcf.chunk.js.map",
+    "runtime-main.js": "/undergroundmarket/static/js/runtime-main.de7b2db6.js",
+    "runtime-main.js.map": "/undergroundmarket/static/js/runtime-main.de7b2db6.js.map",
+    "static/js/2.61be9dab.chunk.js": "/undergroundmarket/static/js/2.61be9dab.chunk.js",
+    "static/js/2.61be9dab.chunk.js.map": "/undergroundmarket/static/js/2.61be9dab.chunk.js.map",
+    "static/js/3.a0895318.chunk.js": "/undergroundmarket/static/js/3.a0895318.chunk.js",
+    "static/js/3.a0895318.chunk.js.map": "/undergroundmarket/static/js/3.a0895318.chunk.js.map",
+    "index.html": "/undergroundmarket/index.html",
+    "static/css/main.cf77d654.chunk.css.map": "/undergroundmarket/static/css/main.cf77d654.chunk.css.map",
+    "static/js/2.61be9dab.chunk.js.LICENSE.txt": "/undergroundmarket/static/js/2.61be9dab.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de7b2db6.js",
+    "static/js/2.61be9dab.chunk.js",
+    "static/css/main.cf77d654.chunk.css",
+    "static/js/main.f5095fcf.chunk.js"
+  ]
+}
