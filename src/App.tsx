@@ -50,7 +50,7 @@ const App: React.FC<{}> = () => {
             token || localStorage.getItem("TOKEN") ? 
                 (
                     <Switch>
-                        <Route exact path="/">
+                        <Route exact path="/undergroundmarket/">
                             <Main 
                                 token={token}
                                 name={user.fn} 
@@ -62,14 +62,14 @@ const App: React.FC<{}> = () => {
                             />
                         </Route>
 
-                        <Route path={"/track/:trackId"}>
+                        <Route path={"/undergroundmarket/track/:trackId"}>
                             <TrackInfo
                                 playlist={undergroundPlaylist}
                                 playlistID={undergroundPlaylistID}
                             />
                         </Route>
 
-                        <Route path="/me">
+                        <Route path="/undergroundmarket/me">
                             <Me 
                                 playlist={undergroundPlaylist}
                                 playlistID={undergroundPlaylistID}
