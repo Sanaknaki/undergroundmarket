@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Me } from "./Me";
 import { PlaylistListItem } from "./PlaylistListItem";
 import { Search } from "./Search";
 
@@ -18,6 +19,7 @@ interface MainProps {
 export const Main: React.FC<MainProps> = ({token, name, undergroundPlaylist, undergroundPlaylistID, popularDailyPlaylist, createUndergroundMarketPlaylist}) => {
     
     const [searching = false, toggleSearching] = useState(Boolean);
+    const [insighting = false, toggleInsight] = useState(Boolean);
 
     function renderPlaylist() {
         let list = [];
@@ -59,22 +61,35 @@ export const Main: React.FC<MainProps> = ({token, name, undergroundPlaylist, und
 
                 <Row style={{width: "100%", marginLeft: "auto", marginRight: "auto"}}>
                     <Col className="text-left" md={{span: 3, offset: 1}}>
-                    <span className="bold gray" style={{fontSize: "16px"}}>Playlist</span>
+                    <Row>
+                        <Col className="text-left" md={6}>
+                            <span onClick={() => toggleInsight(false)} className={(insighting ? "medium" : "bold") + " " + (insighting ? "gray" : "blue")} style={{fontSize: "16px", cursor: "pointer"}}>Your Playlist</span>
+                        </Col>
+                        <Col className="text-right" md={6}>
+                            <span onClick={() => toggleInsight(true)} className={(insighting ? "bold" : "medium") + " " + (insighting ? "blue" : "gray")} style={{fontSize: "16px", cursor: "pointer"}}>Insights</span>
+                        </Col>
+                    </Row>    
                     <ListGroup className="boxShadow">
-                                    {
-                                        (undergroundPlaylist && undergroundPlaylistID !== "-1") ?
-                                            renderPlaylist()
-                                        :
-                                            <ListGroup.Item onClick={() => createUndergroundMarketPlaylist(token)} style={{fontSize: "16px", display: "block", cursor: "pointer"}}>
-                                                <Container>
-                                                    <Row>
-                                                        <Col className="text-left" md={12}>
-                                                            <span className="medium gray">👆🏽 &nbsp;&nbsp;&nbsp; Click here to create your <span className="bold blue">"Underground Market"</span> playlist!</span>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </ListGroup.Item>
-                                    }
+                        {
+                            (insighting) ?
+                                <Me 
+                                playlist={undergroundPlaylist}
+                                playlistID={undergroundPlaylistID}
+                                />
+                            :
+                            (undergroundPlaylist && undergroundPlaylistID !== "-1") ?
+                                renderPlaylist()
+                            :
+                                <ListGroup.Item onClick={() => createUndergroundMarketPlaylist(token)} style={{fontSize: "16px", display: "block", cursor: "pointer"}}>
+                                    <Container>
+                                        <Row>
+                                            <Col className="text-left" md={12}>
+                                                <span className="medium gray">👆🏽 &nbsp;&nbsp;&nbsp; Click here to create your <span className="bold blue">"Underground Market"</span> playlist!</span>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </ListGroup.Item>
+                        }
                     </ListGroup>
                     </Col>
 

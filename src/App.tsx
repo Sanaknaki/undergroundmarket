@@ -11,7 +11,6 @@ import { Navbar, Row, Col} from "react-bootstrap";
 
 import { Main } from "./components/Main";
 import { TrackInfo } from "./components/TrackInfo";
-import { Me } from "./components/Me";
 
 import { NavigationBar } from "./components/NavigationBar";
 
@@ -32,8 +31,6 @@ const App: React.FC<{}> = () => {
     const [undergroundPlaylistID, setUndergroundPlaylistID] = useState("");
 
     const [popularDailyPlaylist, setPopularDailyPlaylist] = useState([]);
-
-    const [, updateState] = useState();
 
     const loginOptions = {
         loop: true,
@@ -76,17 +73,15 @@ const App: React.FC<{}> = () => {
         window.location.hash = "";
     }, []);
 
-    console.log("render");
-
     return (
         <Router>
-            <NavigationBar token={token} spotify={spotify} authEndpoint={authEndpoint} updateState={updateState}/>
+            <NavigationBar token={token} spotify={spotify} authEndpoint={authEndpoint} />
 
             {
                 token || localStorage.getItem("TOKEN") ? 
                     (
                         <Switch>
-                            <Route exact path="undergroundmarket/">
+                            <Route exact path="/undergroundmarket/">
                                 <Main 
                                     token={token}
                                     name={user.fn} 
@@ -98,20 +93,12 @@ const App: React.FC<{}> = () => {
                                 />
                             </Route>
 
-                            <Route path={"undergroundmarket/track/:trackId"}>
+                            <Route path={"/undergroundmarket/track/:trackId"}>
                                 <TrackInfo
                                     playlist={undergroundPlaylist}
                                     playlistID={undergroundPlaylistID}
                                 />
                             </Route>
-
-                            <Route path="undergroundmarket/me">
-                                <Me 
-                                    playlist={undergroundPlaylist}
-                                    playlistID={undergroundPlaylistID}
-                                />
-                            </Route>
-
                         </Switch>
                     )
                 :

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { TrackInfoItem } from "./TrackInfoItem";
 
-import { Jumbotron, Col, Row, ListGroup, Container } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 
 interface MeProps {
     playlist: any[],
@@ -59,34 +59,12 @@ export const Me: React.FC<MeProps> = ({playlist, playlistID}) => {
         );
     } else { 
         return (
-            <header className="App-header">
-                <Jumbotron className='text-left' style={{fontSize: `calc(10px + 2vmin)`, width: "100%", backgroundColor: "transparent", paddingLeft: "0px"}}>
-                    <Row>
-                        <Col md={1} />
-                        <Col className="text-left" md={11}>
-                            <span className="bold"><span className="gray">Here's some <span className="blue">insight</span> on your playlist. </span></span>
-                        </Col>
-                    </Row>
-                </Jumbotron>
-                
-                <Container>
-                    <Row>
-                        <Col md={12} style={{marginBottom: "50px"}}>
-                            <Row>
-                                <Col className="text-left" md={{span: 6, offset: 3}}>
-                                    <span className="bold gray" style={{fontSize: "16px"}}>Insight</span>
-                                    <ListGroup className="boxShadow">
-                                        <TrackInfoItem label="Underground Status" value={stats.undergroundStatus}/>
-                                        <TrackInfoItem label="Average Popularity" value={stats.avgPopularity ? stats.avgPopularity : "0"}/>
-                                        <TrackInfoItem label="# Tracks" value={stats.numTracks}/>
-                                        <TrackInfoItem label="# Artists" value={stats.numArtists}/>
-                                    </ListGroup>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
-            </header>
+            <ListGroup className="boxShadow">
+                <TrackInfoItem label="Underground Status" value={stats.undergroundStatus}/>
+                <TrackInfoItem label="Average Popularity" value={stats.avgPopularity ? stats.avgPopularity : "0"}/>
+                <TrackInfoItem label="# Tracks" value={stats.numTracks}/>
+                <TrackInfoItem label="# Artists" value={stats.numArtists}/>
+            </ListGroup>
         );
         }
 }

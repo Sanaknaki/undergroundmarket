@@ -10,7 +10,7 @@ interface PlaylistListItemProps {
 
 export const PlaylistListItem: React.FC<PlaylistListItemProps> = ({track}) => {
     return (
-        <Link to={"undergroundmarket/track/" + track.id}>
+        <Link to={"/undergroundmarket/track/" + track.id}>
             <ListGroup.Item>
                 <Container>
                     <Row className="black">

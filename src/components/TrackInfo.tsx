@@ -36,7 +36,7 @@ export const TrackInfo: React.FC<TrackInfoProps> = ({playlist, playlistID}) => {
         let _token = (localStorage.getItem("TOKEN"));
         if(_token) {
             setToken(_token);
-            axios("https://api.spotify.com/v1/tracks/" + window.location.pathname.split('/')[2], {
+            axios("https://api.spotify.com/v1/tracks/" + window.location.pathname.split('/')[3], {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Authorization": "Bearer " + _token
