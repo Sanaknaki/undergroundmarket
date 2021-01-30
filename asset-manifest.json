@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/undergroundmarket/static/css/main.15374f6f.chunk.css",
-    "main.js": "/undergroundmarket/static/js/main.03e60f54.chunk.js",
-    "main.js.map": "/undergroundmarket/static/js/main.03e60f54.chunk.js.map",
+    "main.js": "/undergroundmarket/static/js/main.1e1edd65.chunk.js",
+    "main.js.map": "/undergroundmarket/static/js/main.1e1edd65.chunk.js.map",
     "runtime-main.js": "/undergroundmarket/static/js/runtime-main.55714fc6.js",
     "runtime-main.js.map": "/undergroundmarket/static/js/runtime-main.55714fc6.js.map",
-    "static/js/2.978393d2.chunk.js": "/undergroundmarket/static/js/2.978393d2.chunk.js",
-    "static/js/2.978393d2.chunk.js.map": "/undergroundmarket/static/js/2.978393d2.chunk.js.map",
+    "static/js/2.9038c256.chunk.js": "/undergroundmarket/static/js/2.9038c256.chunk.js",
+    "static/js/2.9038c256.chunk.js.map": "/undergroundmarket/static/js/2.9038c256.chunk.js.map",
     "static/js/3.61cc7d11.chunk.js": "/undergroundmarket/static/js/3.61cc7d11.chunk.js",
     "static/js/3.61cc7d11.chunk.js.map": "/undergroundmarket/static/js/3.61cc7d11.chunk.js.map",
     "index.html": "/undergroundmarket/index.html",
     "static/css/main.15374f6f.chunk.css.map": "/undergroundmarket/static/css/main.15374f6f.chunk.css.map",
-    "static/js/2.978393d2.chunk.js.LICENSE.txt": "/undergroundmarket/static/js/2.978393d2.chunk.js.LICENSE.txt",
+    "static/js/2.9038c256.chunk.js.LICENSE.txt": "/undergroundmarket/static/js/2.9038c256.chunk.js.LICENSE.txt",
     "static/media/logo.5dc7a593.png": "/undergroundmarket/static/media/logo.5dc7a593.png"
   },
   "entrypoints": [
     "static/js/runtime-main.55714fc6.js",
-    "static/js/2.978393d2.chunk.js",
+    "static/js/2.9038c256.chunk.js",
     "static/css/main.15374f6f.chunk.css",
-    "static/js/main.03e60f54.chunk.js"
+    "static/js/main.1e1edd65.chunk.js"
   ]
 }
