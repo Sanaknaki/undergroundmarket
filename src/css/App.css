@@ -16,11 +16,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: black;
 }
 
 .track-view {
@@ -68,5 +64,6 @@
 .blue      { color: #71B1B1 !important; }
 .green     { color: #1ED760 !important; }
 .white     { color: #FFFFFF !important; }
+.black     { color: #000000 !important; }
 
 a, .nav-link { text-decoration: none !important; }

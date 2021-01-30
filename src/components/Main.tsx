@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { PlaylistListItem } from './PlaylistListItem';
+import { PlaylistListItem } from "./PlaylistListItem";
+import { Search } from "./Search";
 
-import { Jumbotron, Col, Row, ListGroup } from "react-bootstrap";
+import { Jumbotron, Col, Row, ListGroup, Container } from "react-bootstrap";
 
 interface MainProps {
     token: string,
@@ -11,11 +12,13 @@ interface MainProps {
     popularDailyPlaylist: any[],
     name: string,
 
-    createUndergroundMarketPlaylist: Function
+    createUndergroundMarketPlaylist: Function,
 }
 
 export const Main: React.FC<MainProps> = ({token, name, undergroundPlaylist, undergroundPlaylistID, popularDailyPlaylist, createUndergroundMarketPlaylist}) => {
     
+    const [searching = false, toggleSearching] = useState(Boolean);
+
     function renderPlaylist() {
         let list = [];
         if(undergroundPlaylist.length === 0) {
@@ -55,37 +58,51 @@ export const Main: React.FC<MainProps> = ({token, name, undergroundPlaylist, und
                 </Jumbotron>
 
                 <Row style={{width: "100%", marginLeft: "auto", marginRight: "auto"}}>
-                    <Col md={1} />
-                    <Col className="text-left" md={3}>
+                    <Col className="text-left" md={{span: 3, offset: 1}}>
                     <span className="bold gray" style={{fontSize: "16px"}}>Playlist</span>
                     <ListGroup className="boxShadow">
                                     {
                                         (undergroundPlaylist && undergroundPlaylistID !== "-1") ?
                                             renderPlaylist()
                                         :
-                                            <Col className="text-center" md={12}>
-                                                <span onClick={() => createUndergroundMarketPlaylist(token)} className="bold lightgray" style={{fontSize: "16px", display: "block", cursor: "pointer"}}>
-                                                    Create a playlist named "Underground Market" to start.
-                                                </span>
-                                            </Col>
+                                            <ListGroup.Item onClick={() => createUndergroundMarketPlaylist(token)} style={{fontSize: "16px", display: "block", cursor: "pointer"}}>
+                                                <Container>
+                                                    <Row>
+                                                        <Col className="text-left" md={12}>
+                                                            <span className="medium gray">👆🏽 &nbsp;&nbsp;&nbsp; Click here to create your <span className="bold blue">"Underground Market"</span> playlist!</span>
+                                                        </Col>
+                                                    </Row>
+                                                </Container>
+                                            </ListGroup.Item>
                                     }
                     </ListGroup>
                     </Col>
-                    <Col sm={4} />
-                    <Col className="text-left" md={3}>
-                        <span className="bold gray" style={{fontSize: "16px"}}>Popular Tracks Today</span>
-                        <ListGroup className="boxShadow">
-                            {
-                                popularDailyPlaylist.map((item, idx) => {
-                                    return <PlaylistListItem 
-                                                key={idx}
-                                                track={item.track}
-                                            />;
-                                })
-                            }
-                        </ListGroup>
+
+                    <Col md={{span: 3, offset: 4}}>
+                        <Row>
+                        <Col className="text-left" md={6}>
+                            <span onClick={() => toggleSearching(false)} className={(searching ? "medium" : "bold") + " " + (searching ? "gray" : "blue")} style={{fontSize: "16px", cursor: "pointer"}}>Popular Tracks Today</span>
+                        </Col>
+                        <Col className="text-right" md={6}>
+                            <span onClick={() => toggleSearching(true)} className={(searching ? "bold" : "medium") + " " + (searching ? "blue" : "gray")} style={{fontSize: "16px", cursor: "pointer"}}>Search</span>
+                        </Col>
+                        </Row>
+                        {
+                            (searching) ?
+                                <Search token={token}/>
+                            :
+                            <ListGroup className="boxShadow">
+                                {
+                                    popularDailyPlaylist.map((item, idx) => {
+                                        return <PlaylistListItem 
+                                                    key={idx}
+                                                    track={item.track}
+                                                />;
+                                    })
+                                }
+                            </ListGroup>
+                        }
                     </Col>
-                    <Col md={1} />
                 </Row>
             </header>
         </div>

@@ -11,10 +11,24 @@ export async function getCurrentUser(token: string, setUser: Function) {
         method: "GET"
     })
     .then(response => {
-        // console.log(response);
         setUser({fn: response.data.display_name.split(" ")[0], id: response.data.id});
     });
 };
+
+// Search for a track
+export async function searchForTrack(token: string, query: string, setValues: Function) {
+    await axios("https://api.spotify.com/v1/search?q=" + query.split("%20").join() + "&type=track", {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + token
+        },
+        data: "grant_type=client_credentials",
+        method: "GET"
+    })
+    .then(response => {
+        return setValues({query: query, results: response.data.tracks});
+    });
+}
 
 // Get the Underground Market playlist
 export async function getCurrentUsersPlaylists(token: string, setUnderGroundPlaylist: Function, setUndergroundPlaylistID: Function) {
@@ -42,8 +56,6 @@ export async function getCurrentUsersPlaylists(token: string, setUnderGroundPlay
                 })
                 .then(response => {
                     response.data.tracks.items.sort((a: any, b: any) => (a.track.popularity < b.track.popularity) ? 1 : -1);
-                    console.log(response.data);
-                    // setPopularDailyPlaylist(response.data.tracks.items);
                     setUnderGroundPlaylist(response.data.tracks.items);
                     setUndergroundPlaylistID(playlist.id);
                 });

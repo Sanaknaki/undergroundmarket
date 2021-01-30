@@ -10,10 +10,10 @@ interface PlaylistListItemProps {
 
 export const PlaylistListItem: React.FC<PlaylistListItemProps> = ({track}) => {
     return (
-        <Link to={"/track/" + track.id}>
+        <Link to={"undergroundmarket/track/" + track.id}>
             <ListGroup.Item>
                 <Container>
-                    <Row style={{color: "black"}}>
+                    <Row className="black">
                         <Col className="text-left" md={10}>
                             <span className="thicc gray" style={{fontSize: "20px", display: "block" }}>{track.name}</span>
                             <span className="bold lightgray" style={{fontSize: "12px", display: "block"}}>{track.album.artists[0].name}</span>

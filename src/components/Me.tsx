@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { TrackInfoItem } from './TrackInfoItem';
+import { TrackInfoItem } from "./TrackInfoItem";
 
 import { Jumbotron, Col, Row, ListGroup, Container } from "react-bootstrap";
-import { findAllByDisplayValue } from "@testing-library/react";
 
 interface MeProps {
     playlist: any[],
@@ -16,7 +15,7 @@ export const Me: React.FC<MeProps> = ({playlist, playlistID}) => {
         if(playlistID !== "-1") {
             renderStats();
         }
-    }, [playlist]);
+    }, [playlistID]);
 
     const [stats, setStats] = useState({
         undergroundStatus: "",
@@ -35,7 +34,9 @@ export const Me: React.FC<MeProps> = ({playlist, playlistID}) => {
         for(let item of playlist) {
             numTracks++;
             totalPopularity += item.track.popularity;
-            numArtists.add(item.track.artists[0]); 
+            if(!numArtists.has(item.track.artists[0].name)) {
+                numArtists.add(item.track.artists[0].name); 
+            }
         }
 
         let avgPopularity = Math.floor(totalPopularity / numTracks)
