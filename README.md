@@ -1,4 +1,6 @@
-# Underground Market, Stock Market for Music!
+<img src="https://i.imgur.com/kLXIwec.png" data-canonical-src="https://i.imgur.com/kLXIwec.png" width="300" />
+
+# Stock Market for Music!
 🚀 Designed and built a music "marketplace" using Spotify's API, add / remove music to your custom "Underground Market" playlist, make sure your underground status is excellent so you can brag about listening to unpopular music. 
 
 ## Technology And Software
