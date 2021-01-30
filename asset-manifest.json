@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/undergroundmarket/static/css/main.cf77d654.chunk.css",
-    "main.js": "/undergroundmarket/static/js/main.1dd9db66.chunk.js",
-    "main.js.map": "/undergroundmarket/static/js/main.1dd9db66.chunk.js.map",
-    "runtime-main.js": "/undergroundmarket/static/js/runtime-main.de7b2db6.js",
-    "runtime-main.js.map": "/undergroundmarket/static/js/runtime-main.de7b2db6.js.map",
-    "static/js/2.61be9dab.chunk.js": "/undergroundmarket/static/js/2.61be9dab.chunk.js",
-    "static/js/2.61be9dab.chunk.js.map": "/undergroundmarket/static/js/2.61be9dab.chunk.js.map",
-    "static/js/3.a0895318.chunk.js": "/undergroundmarket/static/js/3.a0895318.chunk.js",
-    "static/js/3.a0895318.chunk.js.map": "/undergroundmarket/static/js/3.a0895318.chunk.js.map",
+    "main.css": "/undergroundmarket/static/css/main.15374f6f.chunk.css",
+    "main.js": "/undergroundmarket/static/js/main.9384466d.chunk.js",
+    "main.js.map": "/undergroundmarket/static/js/main.9384466d.chunk.js.map",
+    "runtime-main.js": "/undergroundmarket/static/js/runtime-main.55714fc6.js",
+    "runtime-main.js.map": "/undergroundmarket/static/js/runtime-main.55714fc6.js.map",
+    "static/js/2.10c72527.chunk.js": "/undergroundmarket/static/js/2.10c72527.chunk.js",
+    "static/js/2.10c72527.chunk.js.map": "/undergroundmarket/static/js/2.10c72527.chunk.js.map",
+    "static/js/3.61cc7d11.chunk.js": "/undergroundmarket/static/js/3.61cc7d11.chunk.js",
+    "static/js/3.61cc7d11.chunk.js.map": "/undergroundmarket/static/js/3.61cc7d11.chunk.js.map",
     "index.html": "/undergroundmarket/index.html",
-    "static/css/main.cf77d654.chunk.css.map": "/undergroundmarket/static/css/main.cf77d654.chunk.css.map",
-    "static/js/2.61be9dab.chunk.js.LICENSE.txt": "/undergroundmarket/static/js/2.61be9dab.chunk.js.LICENSE.txt"
+    "static/css/main.15374f6f.chunk.css.map": "/undergroundmarket/static/css/main.15374f6f.chunk.css.map",
+    "static/js/2.10c72527.chunk.js.LICENSE.txt": "/undergroundmarket/static/js/2.10c72527.chunk.js.LICENSE.txt",
+    "static/media/logo.5dc7a593.png": "/undergroundmarket/static/media/logo.5dc7a593.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.de7b2db6.js",
-    "static/js/2.61be9dab.chunk.js",
-    "static/css/main.cf77d654.chunk.css",
-    "static/js/main.1dd9db66.chunk.js"
+    "static/js/runtime-main.55714fc6.js",
+    "static/js/2.10c72527.chunk.js",
+    "static/css/main.15374f6f.chunk.css",
+    "static/js/main.9384466d.chunk.js"
   ]
 }
