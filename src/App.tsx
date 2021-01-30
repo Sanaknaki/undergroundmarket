@@ -119,7 +119,7 @@ const App: React.FC<{}> = () => {
                     <header className="track-view">
                         <Row>
                             <Col md={12} style={{marginBottom: "100px"}}>
-                                <img src={logo} alt="logo" height={"100px"}/>
+                                <img src={logo} alt="logo" height={"80px"}/>
                             </Col>
                             <Col md={4}>
                                 <h1 className="thicc blue">Step 1</h1>
