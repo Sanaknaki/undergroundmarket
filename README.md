@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Underground Market, Stock Market for Music!
+🚀 Designed and built a music "marketplace" using Spotify's API, add / remove music to your custom "Underground Market" playlist, make sure your underground status is excellent so you can brag about listening to unpopular music. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technology And Software
+💻 ReactJS, Typescript <br/>
+🖌 Sketch, Adobe Illustrator <br />
+📦 Bootstrap, FontAwesome, Axios, Spotify API
 
-## Available Scripts
+## Features
+📈 View insights on your "Underground Market" playlist (how underground it is) <br />
+🔎 Search through the 50,000,000 songs on Spotify <br />
+🎵 Add / Remove songs from your playlist! <br />
 
-In the project directory, you can run:
+## Screenshots And Design
+🖌 The design was made in Sketch, logo and icon was made through Adobe Illustrator!<br />
 
-### `npm start`
+![sc1](https://i.imgur.com/8yxOloQ.png)
+![sc2](https://i.imgur.com/uY0RZnb.png)
+![sc3](https://i.imgur.com/G8A27L2.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🎨 Colours used <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![#BCCBCB](https://via.placeholder.com/15/BCCBCB/000000?text=+) `#BCCBCB` <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![#707272](https://via.placeholder.com/15/707272/000000?text=+) `#707272` <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![#71B1B1](https://via.placeholder.com/15/71B1B1/000000?text=+) `#71B1B1` <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![#1ED760](https://via.placeholder.com/15/1ED760/000000?text=+) `#1ED760` <br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
