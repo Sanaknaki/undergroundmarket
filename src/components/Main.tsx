@@ -84,7 +84,7 @@ export const Main: React.FC<MainProps> = ({token, name, undergroundPlaylist, und
                                     <Container>
                                         <Row>
                                             <Col className="text-left" md={12}>
-                                                <span className="medium gray">👆🏽 &nbsp;&nbsp;&nbsp; Click here to create your <span className="bold blue">"Underground Market"</span> playlist!</span>
+                                                <span className="medium gray">👉🏽 &nbsp;&nbsp;&nbsp; Click here to create your <span className="bold blue">"Underground Market"</span> playlist!</span>
                                             </Col>
                                         </Row>
                                     </Container>
